@@ -60,7 +60,7 @@ app.post("/api/wilders", asyncHandler(WilderController.create));
 //GET Wilders
 app.get("/api/wilders", asyncHandler(WilderController.retrieve));
 //DELETE
-app.delete("/api/wilders", asyncHandler(WilderController.delete));
+app.delete("/api/wilders/:id", asyncHandler(WilderController.delete));
 //Update
 app.put("/api/wilders", asyncHandler(WilderController.update));
 //Mauvaise adresse

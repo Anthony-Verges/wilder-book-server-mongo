@@ -15,7 +15,7 @@ module.exports = {
   },
 
   delete: async (req, res) => {
-    const wilderRemove = await WilderModel.deleteOne({ _id: req.body._id });
+    const wilderRemove = await WilderModel.deleteOne({ _id: req.params.id });
     res.json({ wilderRemove });
   },
 
