@@ -21,7 +21,7 @@ module.exports = {
 
   update: async (req, res) => {
     const wilderUpdate = await WilderModel.updateOne(
-      { _id: req.body._id },
+      { _id: req.params.id },
       req.body
     );
     res.json({ wilderUpdate });

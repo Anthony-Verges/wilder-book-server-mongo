@@ -6,6 +6,7 @@ const asyncHandler = require("express-async-handler");
 const cors = require("cors");
 const WilderModel = require("./models/Wilder");
 const WilderController = require("./controllers/wilders");
+const SkillController = require("./controllers/Skill");
 
 const app = express();
 //database
@@ -57,12 +58,14 @@ app.get("/", (req, res) => {
 
 //CREATE
 app.post("/api/wilders", asyncHandler(WilderController.create));
+//CREATE SKILL
+app.post("/api/wilders/skill", asyncHandler(SkillController.create));
 //GET Wilders
 app.get("/api/wilders", asyncHandler(WilderController.retrieve));
 //DELETE
 app.delete("/api/wilders/:id", asyncHandler(WilderController.delete));
 //Update
-app.put("/api/wilders", asyncHandler(WilderController.update));
+app.put("/api/wilders/:id", asyncHandler(WilderController.update));
 //Mauvaise adresse
 app.get("*", (req, res) => {
   res.status(404);
